@@ -16,13 +16,32 @@
 
 ``` java
 public class Pegawai {
-     String nama;
-     double gajipokok;
+     private String nama;
+     private double gajipokok;
 
-    public Pegawai(String nama, double gajipokok){
+     //Constructor
+    public Pegawai(){
         this.nama = nama;
         this.gajipokok = gajipokok;
 
+    }
+
+    //setter
+    public void setnama(String nama){
+        this.nama = nama;
+    }
+
+    public void setgajipokok(double gajipokok){
+        this.gajipokok = gajipokok;
+    }
+
+    //getter
+    public String getnama(){
+        return nama;
+    }
+
+    public double gajipokok(){
+        return gajipokok;
     }
 
     public void cetakInfo(){
@@ -30,33 +49,49 @@ public class Pegawai {
         System.out.println("Gaji Pokok  : "+this.gajipokok);
     }
 }
+
 ```
 
 <p> Manager.java <p>
 
 ```java
 public class Manager  extends Pegawai {
-    double tunjangan;
+    private double tunjangan;
 
-    public Manager(String nama, double gajipokok, double tunjangan) {
-        super(nama, gajipokok);
+    public Manager() {
+        super();
+    }
+
+    public void settunjangan(double tunjangan){
         this.tunjangan = tunjangan;
     }
 
+    public double gettunjangan(){
+        return tunjangan;
+    }
+    
     public void cetakInfo(){
         super.cetakInfo();
         System.out.println("Tunjangan   : "+this.tunjangan);
     }
 }
+
 ```
 <p> Programmer.java <p>
 
 ```java
 public class Programmer extends Pegawai {
-    double bonus;
-     public Programmer(String nama, double gajipokok, double bonus) {
-        super(nama, gajipokok);
+    private double bonus;
+     public Programmer() {
+        super();
+    }
+
+    public void setbonus(double bonus){
         this.bonus = bonus;
+    }
+
+    public double getbonus(){
+        return bonus;
     }
 
     public void cetakInfo(){
@@ -64,6 +99,7 @@ public class Programmer extends Pegawai {
         System.out.println("Bonus       : "+this.bonus);
     }
 }
+
 ```
 
 <p> main.java <p>
@@ -71,17 +107,26 @@ public class Programmer extends Pegawai {
 ```java
 public class Main {
     public static void main(String[] args) {
-        Pegawai a = new Pegawai("Andi", 5200000);
-        Manager b = new Manager ("Riki", 6800000, 4000000);
-        Programmer c = new Programmer("Anto", 8000000, 5000000);
+        Pegawai a = new Pegawai();
+        Manager b = new Manager ();
+        Programmer c = new Programmer();
+
+        a.setnama("Andi");
+        a.setgajipokok(5200000);
+        b.setnama("Riki");
+        b.setgajipokok(6800000);
+        b.settunjangan(4000000);
+        c.setnama("Anto");
+        c.setgajipokok(8000000);
+        c.setbonus(5000000);
     
         a.cetakInfo();
         b.cetakInfo();
         c.cetakInfo();
     }
     
-    
 }
+
 ```
 
 <p> Outputnya sebagai berikut <p>
