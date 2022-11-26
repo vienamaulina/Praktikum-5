@@ -1,8 +1,17 @@
 public class Main {
     public static void main(String[] args) {
-        Pegawai a = new Pegawai("Andi", 5200000);
-        Manager b = new Manager ("Riki", 6800000, 4000000);
-        Programmer c = new Programmer("Anto", 8000000, 5000000);
+        Pegawai a = new Pegawai();
+        Manager b = new Manager ();
+        Programmer c = new Programmer();
+
+        a.setnama("Andi");
+        a.setgajipokok(5200000);
+        b.setnama("Riki");
+        b.setgajipokok(6800000);
+        b.settunjangan(4000000);
+        c.setnama("Anto");
+        c.setgajipokok(8000000);
+        c.setbonus(5000000);
     
         a.cetakInfo();
         b.cetakInfo();
