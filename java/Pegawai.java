@@ -23,7 +23,7 @@ public class Pegawai {
         return nama;
     }
 
-    public double gajipokok(){
+    public double getgajipokok(){
         return gajipokok;
     }
 
